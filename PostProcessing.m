@@ -96,12 +96,12 @@ for m = 1:length(line_depth)
         line_depth(m) = depth(row,col);
 end
 
-% Take the max density probability within +/- 8 samples of the expected 2012 layer 
+% Take the max density probability within +/- 4 samples of the expected 2012 layer 
 % depth to collapse layer metrics in the vertical 
 density_prob = zeros*ones(1, size(data_prob, 2));
 for k = 1:length(density_prob)
-    start = round((line_depth(k)/0.3) - 8);
-    stop = round((line_depth(k)/0.3) + 8);
+    start = round((line_depth(k)/0.3) - 4);
+    stop = round((line_depth(k)/0.3) + 4);
     if start < 1
         start = 1;
     end
@@ -172,13 +172,13 @@ for m = 1:length(line_depth)
         line_depth(m) = depth(row,col);
 end
 
-% Find the minimum and maximum consistent density for each trace with +/- 8
+% Find the minimum and maximum consistent density for each trace with +/- 4
 % samples of the estimated layer depth
 min_density = zeros(1, size(data_min, 2));
 max_density = zeros(1, size(data_min, 2));
 for k = 1:length(min_density)
-    start = round((line_depth(k)/0.3) - 8);
-    stop = round((line_depth(k)/0.3) + 8);
+    start = round((line_depth(k)/0.3) - 4);
+    stop = round((line_depth(k)/0.3) + 4);
     if start < 1
         start = 1;
     end
