@@ -137,7 +137,7 @@ for k = 1:length(surface)
     
     % Set up geometric spreading loss correction
     depth1 = unique(depth1);
-    geom = (2*(h(k) + depth1/1.6).^2);
+    geom = (2*(h(k) + depth1/1.6)).^2;
     
     % Geometrically correct radar received power and clip both radar and
     % simulation traces to depths between 15 and 80 meters to avoid any
